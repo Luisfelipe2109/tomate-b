@@ -8,6 +8,8 @@
    Regla: si un dato no está en la fuente, NO lo inventes. Avisa y pide.
    ═══════════════════════════════════════════════════════════════════ */
 
+import FormularioContacto from "./components/FormularioContacto";
+
 /* ══════════════════ 1. LOS DATOS · esto es lo que cambias ══════════════════ */
 
 const NEGOCIO = {
@@ -249,38 +251,7 @@ export default function Home() {
             {NEGOCIO.cta}
           </h2>
           <p className="mt-2 text-muted">Déjanos tus datos y te respondemos.</p>
-          <form action="#" className="mt-8 grid gap-4 sm:grid-cols-2">
-            {CAMPOS.map((c) => (
-              <div key={c.name} className={c.ancho === "completo" ? "sm:col-span-2" : undefined}>
-                <label htmlFor={c.name} className="mb-1.5 block text-sm font-semibold">
-                  {c.label}
-                </label>
-                {c.tipo === "textarea" ? (
-                  <textarea
-                    id={c.name}
-                    name={c.name}
-                    rows={4}
-                    className="w-full rounded-xl border border-line bg-paper px-4 py-3 outline-none focus:border-primary"
-                  />
-                ) : (
-                  <input
-                    id={c.name}
-                    name={c.name}
-                    type={c.tipo}
-                    className="w-full rounded-xl border border-line bg-paper px-4 py-3 outline-none focus:border-primary"
-                  />
-                )}
-              </div>
-            ))}
-            <div className="sm:col-span-2">
-              <button type="submit" className="btn btn-bloque">
-                {NEGOCIO.cta}
-              </button>
-              <p className="mt-3 text-center text-sm text-muted">
-                O escríbenos a {CONTACTO.correo}
-              </p>
-            </div>
-          </form>
+          <FormularioContacto />
         </div>
       </section>
 
