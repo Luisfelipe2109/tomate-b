@@ -1,4 +1,16 @@
-.DS_Store
+# dependencies
+node_modules
+/node_modules
 tomate-b/node_modules
+
+# next.js
+.next
+/.next/
 tomate-b/.next
-tomate-b/build
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-debug.log*
+.vercel
